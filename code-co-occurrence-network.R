@@ -16,10 +16,10 @@ E.color.group1 = ifelse(E.color.group1>0, "pink",ifelse(E.color.group1<0, "blue"
 E(igraph.group1)$color = as.character(E.color.group1)
 #change edge width
 E(igraph.group1)$width = abs(igraph.group1.weight)
-#change node size
-igraph.size.group1 = .g1[V(igraph.group1)$name,] 
-igraph.size1.group1 = rowMeans(igraph.size.group1[,2:4])*100
-V(igraph.group1)$size = igraph.size1.group1
+#change node size if need
+#igraph.size.group1 = group1[V(igraph.group1)$name,] 
+#igraph.size1.group1 = rowMeans(igraph.size.group1[,2:4])*100
+#V(igraph.group1)$size = igraph.size1.group1
 # set vertices color, modularity
 fc.group1 = cluster_fast_greedy(igraph.group1,weights =NULL)
 modularity.group1 = modularity(igraph.group1,membership(fc.group1))
@@ -38,9 +38,6 @@ E.color.group2 = igraph.group2.weight
 E.color.group2 = ifelse(E.color.group2>0, "pink",ifelse(E.color.group2<0, "blue","grey")) 
 E(igraph.group2)$color = as.character(E.color.group2)
 E(igraph.group2)$width = abs(igraph.group2.weight)
-igraph.size.group2 = .g2[V(igraph.group2)$name,] 
-igraph.size1.group2 = rowMeans(igraph.size.group2[,2:4])*100
-V(igraph.group2)$size = igraph.size1.group2
 fc.group2 = cluster_fast_greedy(igraph.group2,weights =NULL)
 modularity.group2 = modularity(igraph.group2,membership(fc.group2))
 comps.group2 = membership(fc.group2)
@@ -58,9 +55,7 @@ E.color.group3 = igraph.group3.weight
 E.color.group3 = ifelse(E.color.group3>0, "pink",ifelse(E.color.group3<0, "blue","grey")) 
 E(igraph.group3)$color = as.character(E.color.group3)
 E(igraph.group3)$width = abs(igraph.group3.weight)
-igraph.size.group3 = .g3[V(igraph.group3)$name,] 
-igraph.size1.group3 = rowMeans(igraph.size.group3[,2:4])*100
-V(igraph.group3)$size = igraph.size1.group3
+
 fc.group3 = cluster_fast_greedy(igraph.group3,weights =NULL)
 modularity.group3 = modularity(igraph.group3,membership(fc.group3))
 comps.group3 = membership(fc.group3)
@@ -78,9 +73,7 @@ E.color.group4 = igraph.group4.weight
 E.color.group4 = ifelse(E.color.group4>0, "pink",ifelse(E.color.group4<0, "blue","grey")) 
 E(igraph.group4)$color = as.character(E.color.group4)
 E(igraph.group4)$width = abs(igraph.group4.weight)
-igraph.size.group4 = .g4[V(igraph.group4)$name,] 
-igraph.size1.group4 = rowMeans(igraph.size.group4[,2:4])*100
-V(igraph.group4)$size = igraph.size1.group4
+
 fc.group4 = cluster_fast_greedy(igraph.group4,weights =NULL)
 modularity.group4 = modularity(igraph.group4,membership(fc.group4))
 comps.group4 = membership(fc.group4)
@@ -98,9 +91,7 @@ E.color.group5 = igraph.group5.weight
 E.color.group5 = ifelse(E.color.group5>0, "pink",ifelse(E.color.group5<0, "blue","grey")) 
 E(igraph.group5)$color = as.character(E.color.group5)
 E(igraph.group5)$width = abs(igraph.group5.weight)
-igraph.size.group5 = .g5[V(igraph.group5)$name,] 
-igraph.size1.group5 = rowMeans(igraph.size.group5[,2:4])*100
-V(igraph.group5)$size = igraph.size1.group5
+
 fc.group5 = cluster_fast_greedy(igraph.group5,weights =NULL)
 modularity.group5 = modularity(igraph.group5,membership(fc.group5))
 comps.group5 = membership(fc.group5)
